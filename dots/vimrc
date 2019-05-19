@@ -1,0 +1,12 @@
+" Disable line wrap, add line numbers, auto indentation, 
+" syntax highlighting, and 8 space tabs
+set nowrap
+set number
+set autoindent
+syntax on
+set tabstop=8 softtabstop=0 expandtab shiftwidth=8 smarttab
+
+"Allow color schemes to render properly in st
+if &term =~ '256color'
+	set t_ut=
+endif
