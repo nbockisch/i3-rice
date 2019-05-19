@@ -9,7 +9,7 @@
 UTILS="alsa-utils compton dmenu i3-gaps make pulseaudio pulseaudio-alsa ttf-font-awesome ttf-roboto-mono xorg-apps xorg-server xorg-xinit xsetroot"
 
 # Preferred applications that can be found in pacman
-APPS="feh surf tabbed vim zathura"
+APPS="feh surf tabbed vim wget zathura"
 
 # Install everything from pacman
 pacman -S $UTILS $APPS
