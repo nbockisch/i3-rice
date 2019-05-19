@@ -182,8 +182,6 @@ client.urgent           #bc7515 #bc7515 #a2c7e7 #900000   #bc7515
 client.placeholder      #353026 #353026 #a2c7e7 #353026   #353026
 
 client.background       #ffffff
-# Set terminal settings
-exec xrdb .Xresources
 
 # Set background
 exec --no-startup-id xsetroot -solid "#A2C7E7"
