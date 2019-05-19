@@ -6,7 +6,7 @@
 # Designed for a fresh install with an internet connection
 
 # All the utility packages needed to run the setup
-UTILS="alsa-utils compton dmenu i3-gaps make pulseaudio pulseaudio-alsa ttf-font-awesome xorg-apps xorg-server xorg-xinit xsetroot"
+UTILS="alsa-utils compton dmenu i3-gaps make pulseaudio pulseaudio-alsa ttf-font-awesome ttf-roboto-mono xorg-apps xorg-server xorg-xinit xsetroot"
 
 # Preferred applications that can be found in pacman
 APPS="feh surf tabbed vim zathura"
