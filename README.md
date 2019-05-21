@@ -6,5 +6,5 @@ This is designed to work with Arch, Parabola, and other Arch-based distros. Desi
 
 To install, simply clone the repo and run "sudo ./install" from within the cloned directory.
 
-![layout](img/layout,png)
+![layout](img/layout.png)
 ![neofetch](img/neofetch.png)
