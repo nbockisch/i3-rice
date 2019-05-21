@@ -7,7 +7,7 @@
 # Run with sudo as a non-root user
 
 # All the utility packages and dependencies needed to run the setup
-UTILS="alsa-utils compton dmenu i3-gaps make pulseaudio pulseaudio-alsa ttf-font-awesome xorg-apps xorg-font-utils xorg-server xorg-xinit"
+UTILS="acpi alsa-utils compton dmenu i3-gaps make pulseaudio pulseaudio-alsa xf86-video-intel xorg-apps xorg-font-utils xorg-server xorg-xinit"
 
 # Preferred applications that can be found in pacman
 APPS="feh surf tabbed vim wget zathura"
@@ -16,28 +16,34 @@ APPS="feh surf tabbed vim wget zathura"
 pacman -S $UTILS $APPS
 
 # Clone git repos for applications not in pacman
-git clone https://aur.archlinux.org/lemonbar-xft-git.git /home/$USER/.lemonbar
-git clone https://aur.archlinux.org/ttf-roboto-mono.git /home/$USER/.roboto-mono
-git clone https://git.suckless.org/st /home/$USER/.st
+sudo -u $SUDO_USER git clone https://aur.archlinux.org/lemonbar-xft-git.git /home/$SUDO_USER/.lemonbar
+sudo -u $SUDO_USER git clone https://aur.archlinux.org/ttf-roboto-mono.git /home/$SUDO_USER/.roboto-mono
+sudo -u $SUDO_USER git clone https://aur.archlinux.org/ttf-font-awesome-4.git /home/$SUDO_USER/.font-awesome
+sudo -u $SUDO_USER git clone https://git.suckless.org/st /home/$SUDO_USER/.st
 
 # Copy dot files
-cp dots/st/config.h /home/$USER/.st/config.h
-cp dots/lemonbar/status.sh /home/$USER/.lemonbar/status.sh
+cp dots/st/config.h /home/$SUDO_USER/.st/config.h
+cp dots/lemonbar/status.sh /home/$SUDO_USER/.lemonbar/status.sh
 
-mkdir /home/$USER/.config
-mkdir /home/$USER/.config/i3
-cp dots/config/i3/config /home/$USER/.config/i3/config
+mkdir /home/$SUDO_USER/.config
+mkdir /home/$SUDO_USER/.config/i3
+cp dots/config/i3/config /home/$SUDO_USER/.config/i3/config
 
-cp dots/xinitrc /home/$USER/.xinitrc
-cp dots/bashrc /home/$USER/.bashrc
-cp dots/vimrc /home/$USER/.vimrc
+cp dots/xinitrc /home/$SUDO_USER/.xinitrc
+cp dots/bashrc /home/$SUDO_USER/.bashrc
+cp dots/vimrc /home/$SUDO_USER/.vimrc
 
 # Build repos form source
-make install -C /home/$USER/.st/
+make install -C /home/$SUDO_USER/.st/
 
 # Build AUR packages
-cd /home/$USER/.lemonbar
-sudo -u $USER makepkg -i
+cd /home/$SUDO_USER/.lemonbar
+sudo -u $SUDO_USER makepkg -i
 
-cd /home/$USER/.roboto-mono 
-sudo -u $USER makepkg -i
+cd /home/$SUDO_USER/.roboto-mono 
+sudo -u $SUDO_USER makepkg -i
+
+cd /home/$SUDO_USER/.font-awesome
+sudo -u $SUDO_USER makepkg -i
+
+

@@ -8,4 +8,4 @@
 alias ls='ls --color=auto'
 
 # Set the prompt
-PS1='\w ➤  '
+PS1='\w   '
