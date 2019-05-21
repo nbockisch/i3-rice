@@ -6,7 +6,7 @@
 # Designed for a fresh install with an internet connection
 
 # All the utility packages needed to run the setup
-UTILS="alsa-utils compton dmenu i3-gaps make pulseaudio pulseaudio-alsa ttf-font-awesome ttf-roboto-mono xorg-apps xorg-server xorg-xinit xsetroot"
+UTILS="alsa-utils compton dmenu i3-gaps make pulseaudio pulseaudio-alsa ttf-font-awesome xorg-apps xorg-font-utils xorg-server xorg-xinit"
 
 # Preferred applications that can be found in pacman
 APPS="feh surf tabbed vim wget zathura"
@@ -22,6 +22,7 @@ git clone https://git.suckless.org/st ~/.st
 cp dots/st/config.h ~/.st/config.h
 cp dots/lemonbar/status.sh ~/.lemonbar/status.sh
 
+mkdir ~/.config
 mkdir ~/.config/i3
 cp dots/config/i3/config ~/.config/i3/config
 
