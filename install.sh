@@ -36,5 +36,8 @@ cp dots/vimrc /home/$USER/.vimrc
 make install -C /home/$USER/.st/
 
 # Build AUR packages
-(cd /home/$USER/.lemonbar ; sudo -u $USER makepkg -i)
-(cd /home/$USER/.roboto-mono ; sudo -u $USER makepkg -i)
+cd /home/$USER/.lemonbar
+sudo -u $USER makepkg -i
+
+cd /home/$USER/.roboto-mono 
+sudo -u $USER makepkg -i
