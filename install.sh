@@ -7,10 +7,10 @@
 # Run with sudo as a non-root user
 
 # All the utility packages and dependencies needed to run the setup
-UTILS="acpi alsa-utils compton dmenu i3-gaps make pulseaudio pulseaudio-alsa xf86-video-intel xorg-apps xorg-font-utils xorg-server xorg-xinit"
+UTILS="acpi alsa-utils compton dmenu gcr gst-libav gst-plugins-good gstreamer i3-gaps make pulseaudio pulseaudio-alsa xf86-video-intel xorg-apps xorg-font-utils xorg-server xorg-xinit"
 
 # Preferred applications that can be found in pacman
-APPS="feh surf tabbed vim wget zathura"
+APPS="feh tabbed vim wget zathura"
 
 # Install everything from pacman
 pacman -S $UTILS $APPS
@@ -20,6 +20,7 @@ sudo -u $SUDO_USER git clone https://aur.archlinux.org/lemonbar-xft-git.git /hom
 sudo -u $SUDO_USER git clone https://aur.archlinux.org/ttf-roboto-mono.git /home/$SUDO_USER/.roboto-mono
 sudo -u $SUDO_USER git clone https://aur.archlinux.org/ttf-font-awesome-4.git /home/$SUDO_USER/.font-awesome
 sudo -u $SUDO_USER git clone https://git.suckless.org/st /home/$SUDO_USER/.st
+sudo -u $SUDO_USER git clone https://git.suckless.org/surf /home/$SUDO_USER/.surf
 
 # Copy dot files
 cp dots/st/config.h /home/$SUDO_USER/.st/config.h
@@ -35,6 +36,7 @@ cp dots/vimrc /home/$SUDO_USER/.vimrc
 
 # Build repos form source
 make install -C /home/$SUDO_USER/.st/
+make install -C /home/$SUDO_USER/.surf/
 
 # Build AUR packages
 cd /home/$SUDO_USER/.lemonbar
